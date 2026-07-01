@@ -27,7 +27,8 @@ This project goes beyond basic CRUD operations, leveraging industry-standard arc
 * **Distributed Caching with Redis:** High-speed caching layer for product catalogs and high-traffic endpoints to drastically minimize database roundtrips.
 * **Asynchronous End-to-End Pipeline:** Fully async data operations (`async/await`) leveraging non-blocking I/O threads for maximum throughput under heavy load.
 
-### 🛠️ Resiliency & Developer Experience
+### 🛠️ Resiliency, DevOps & Deployment
+* **Resource-Constrained VPS Deployment:** Fine-tuned and deployed on a Linux **VPS (Virtual Private Server)**, optimizing memory usage and process threads to maintain stable throughput under concurrent client traffic.
 * **Global Exception Handling:** A centralized middleware interceptor that gracefully catches errors, logs failures, and returns consistent, structured RFC-compliant responses to clients.
 * **AutoMapper Integration:** Seamless object-to-object mapping preventing domain model leakage into the API presentation layer.
 * **Electronic Payment Gateway:** Fully integrated and structured payment pipelines ready to process secure digital transactions.
@@ -37,7 +38,7 @@ This project goes beyond basic CRUD operations, leveraging industry-standard arc
 ## 🧰 Tech Stack
 
 * **Framework:** `.NET Core 8.0+ / ASP.NET Core Web API`
-* **Database & ORM:** `SQL Server` + `Entity Framework Core`
+* **Database & ORM:** `PostgreSQL` + `Entity Framework Core (Npgsql)`
 * **Caching:** `Redis`
 * **Security:** `System.IdentityModel.Tokens.Jwt`
 * **Data Mapping:** `AutoMapper`
@@ -46,7 +47,7 @@ This project goes beyond basic CRUD operations, leveraging industry-standard arc
 
 ## 📈 Database Strategy
 
-The system utilizes an **Entity Framework Core Code-First approach** paired with a rich relational schema in **SQL Server**. 
+The system utilizes an **Entity Framework Core Code-First approach** paired with a rich relational schema in **PostgreSQL**. 
 
-* **Data Integrity:** Enforced via comprehensive fluent API configurations, explicit foreign key constraints, and index optimizations.
+* **Data Integrity:** Enforced via comprehensive fluent API configurations, explicit foreign key constraints, and index optimizations native to PostgreSQL.
 * **Decoupled Queries:** The database structure is optimized to handle complex joins implicitly via the Specification Pattern, preventing the "fat controller" anti-pattern.
